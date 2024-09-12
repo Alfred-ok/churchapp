@@ -13,121 +13,129 @@ import {
   CListGroupItem,
   CRow,
 } from '@coreui/react'
+import CIcon from '@coreui/icons-react'
 
 import { useRef, useState } from 'react'
+import { cilTrash } from '@coreui/icons'
 
 const Registration = () => {
-  const [files, setFiles] = useState(null);
-  const inputRef = useRef();
+  const [files, setFiles] = useState(null)
+  const inputRef = useRef()
 
-
-  const handleDragOver =(e)=>{
-    e.preventDefault();
-}
-const handleDrop =(e)=>{
-    e.preventDefault();
+  const handleDragOver = (e) => {
+    e.preventDefault()
+  }
+  const handleDrop = (e) => {
+    e.preventDefault()
     setFiles(e.dataTransfer.files)
     console.log(e.dataTransfer.files)
-}
+  }
 
+  const handleDelete = (fileobj) => {
+    const newfile = Object.values(files).filter((file) => file !== fileobj)
+    setFiles(newfile)
+    console.log('nameit', newfile)
+  }
 
-const handleDelete = (fileobj) =>{
-  const newfile = Object.values(files).filter((file) => file !== fileobj )
-  setFiles(newfile)
-  console.log("nameit", newfile);
-}
-
-const handleUpload = () => {
-  const formData = new FormData();
-  formData.append("Files", files);
-  console.log(formData.getAll())
-  // fetch(
-  //   "link", {
-  //     method: "POST",
-  //     body: formData
-  //   }  
-  // )
-  console.log(files)
-};
-
-
+  const handleUpload = () => {
+    const formData = new FormData()
+    formData.append('Files', files)
+    console.log(formData.getAll())
+    // fetch(
+    //   "link", {
+    //     method: "POST",
+    //     body: formData
+    //   }
+    // )
+    console.log(files)
+  }
 
   return (
     <>
-    <CRow className="justify-content-md-center">
-      <CCol xs={10}>
-        <CCard className="mb-4" style={{boxShadow: "0px 15px 34px 0px rgba(0,0,0,0.2)"}}>
-          <CCardHeader style={{backgroundColor:"#fff"}}>
-            <h3>Upload file</h3>
-          </CCardHeader>
-          <CCardBody>
-
-        
-
-          <div style={{
-                background:"#f3f4f6", 
-                border:"2px dashed lightgray", 
-                borderRadius:"10px", 
-                display:"flex",
-                alignItems:"center", 
-                justifyContent:"center", 
-                flexDirection:"column", 
-                color:"gray", 
-                padding:"20px",
-                //boxShadow: "inset 0px 0px 60px 0px rgba(0,0,0,0.1)" 
-                
-              }}
+      <CRow className="justify-content-md-center">
+        <CCol xs={10}>
+          <CCard className="mb-4" style={{ boxShadow: '0px 15px 34px 0px rgba(0,0,0,0.2)' }}>
+            <CCardHeader style={{ backgroundColor: '#fff' }}>
+              <h3>Upload file</h3>
+            </CCardHeader>
+            <CCardBody>
+              <div
+                style={{
+                  background: '#f3f4f6',
+                  border: '2px dashed lightgray',
+                  borderRadius: '10px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexDirection: 'column',
+                  color: 'gray',
+                  padding: '20px',
+                  //boxShadow: "inset 0px 0px 60px 0px rgba(0,0,0,0.1)"
+                }}
                 onDragOver={handleDragOver}
                 onDrop={handleDrop}
-            >
+              >
                 <h3>Drag and Drop files to upload</h3>
                 <h3>Or</h3>
                 <input
-                    type='file'
-                    multiple
-                    onChange={(e) => setFiles(e.target.files)}
-                    hidden
-                    ref={inputRef}
+                  type="file"
+                  multiple
+                  onChange={(e) => setFiles(e.target.files)}
+                  hidden
+                  ref={inputRef}
                 />
-
 
                 <CButton
                   type="button"
                   color="dark"
-                  
                   id="inputGroupFileAddon04"
-                  onClick={()=> inputRef.current.click()}
-                  style={{margin:"20px"}}
+                  onClick={() => inputRef.current.click()}
+                  style={{ margin: '20px' }}
                 >
                   Select Files
                 </CButton>
-            </div>
-
-            {
-
-            files && (
-              <div style={{margin:"40px"}}>
-                <CListGroup flush>
-                      {Array.from(files).map((file, idx) => 
-                      <CListGroupItem key={idx} style={{display:"flex",justifyContent:"space-between", alignItems:"center"}}>
-                        {file.name}
-                        <CButton color="danger" style={{color:"#fff"}} onClick={()=> handleDelete(file) }>delete</CButton>
-                      </CListGroupItem>
-                      )}
-                </CListGroup>
-                <div style={{margin:"15px", width:"100%"} } className="d-grid gap-2">
-                  <CButton color="success" onClick={handleUpload} style={{marginRight:"20px", color:"#fff"}}  xs={10}>Upload</CButton>
-                  {/*<CButton color="secondary" onClick={() => setFiles(null)}>clear All</CButton>*/}
-                </div>
               </div>
-            )
-            
-            }
-            
-          </CCardBody>
-        </CCard>
-      </CCol>
-    </CRow>
+
+              {files && (
+                <div style={{ margin: '40px' }}>
+                  <CListGroup flush>
+                    {Array.from(files).map((file, idx) => (
+                      <CListGroupItem
+                        key={idx}
+                        style={{
+                          display: 'flex',
+                          justifyContent: 'space-between',
+                          alignItems: 'center',
+                        }}
+                      >
+                        {file.name}
+                        <CButton
+                          color="danger"
+                          style={{ color: '#fff' }}
+                          onClick={() => handleDelete(file)}
+                        >
+                          <CIcon icon={cilTrash} />
+                        </CButton>
+                      </CListGroupItem>
+                    ))}
+                  </CListGroup>
+                  <div style={{ margin: '15px', width: '100%' }} className="d-grid gap-2">
+                    <CButton
+                      color="success"
+                      onClick={handleUpload}
+                      style={{ marginRight: '20px', color: '#fff' }}
+                      xs={10}
+                    >
+                      Upload
+                    </CButton>
+                    {/*<CButton color="secondary" onClick={() => setFiles(null)}>clear All</CButton>*/}
+                  </div>
+                </div>
+              )}
+            </CCardBody>
+          </CCard>
+        </CCol>
+      </CRow>
     </>
   )
 }
