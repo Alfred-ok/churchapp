@@ -1,4 +1,6 @@
 import {
+  CCard,
+  CCardHeader,
   CTable,
   CTableBody,
   CTableDataCell,
@@ -9,6 +11,10 @@ import {
 
 const Members = () => {
   return (
+    <CCard className="mb-4" style={{ boxShadow: '0px 15px 34px 0px rgba(0,0,0,0.2)', color:"blue", padding:"20px"}}>
+    <CCardHeader style={{ backgroundColor: '#fff' }}>
+        <h3>CHURCH MEMBERS</h3>
+    </CCardHeader>
     <CTable>
       <CTableHead>
         <CTableRow>
@@ -37,7 +43,8 @@ const Members = () => {
           <CTableDataCell>@twitter</CTableDataCell>
         </CTableRow>
       </CTableBody>
-    </CTable>
+    </CTable>     
+    </CCard>
   )
 }
 

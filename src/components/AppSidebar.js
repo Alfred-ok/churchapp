@@ -37,9 +37,10 @@ const AppSidebar = () => {
       onVisibleChange={(visible) => {
         dispatch({ type: 'set', sidebarShow: visible })
       }}
-      style={{ backgroundColor: '#FFF', color:'black', boxShadow: "20px 0px 60px -5px rgba(0,0,0,0.2)", zIndex:3 }}
+      style={{ backgroundColor: 'f5f5f5', color:'black', boxShadow: "20px 0px 60px -5px rgba(0,0,0,0.2)", zIndex:3}}
+      
     >
-      <CSidebarHeader className="border-bottom" >
+      <CSidebarHeader className="border-bottom" style={{borderRight:"1px solid rgb(207, 206, 206)"}}>
         <div style={{ display: 'flex', alignItems: 'end', justifyContent: 'center' }}>
           <CImage rounded src={logo1} width={50} height={50} />
           <h4>PCEA</h4>
@@ -56,7 +57,7 @@ const AppSidebar = () => {
       }
       <AppSidebarNav items={navigation} />
 
-      <CSidebarFooter className="border-top d-none d-lg-flex">
+      <CSidebarFooter className="border-top d-none d-lg-flex" style={{borderRight:"1px solid rgb(207, 206, 206)"}}>
         <CSidebarToggler
           onClick={() => dispatch({ type: 'set', sidebarUnfoldable: !unfoldable })}
         />

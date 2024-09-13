@@ -3,7 +3,7 @@ import { AppContent, AppSidebar, AppFooter, AppHeader } from '../components/inde
 
 const DefaultLayout = () => {
   return (
-    <div style={{ backgroundColor: '#f3f4f6', position:"relative", color:"black"}}>
+    <div style={{ backgroundImage:"url('src/assets/images/Geometric-2.jpg')", backgroundRepeat: "repeat", position:"relative", color:"black"}}>
       <AppSidebar />
       <div className="wrapper d-flex flex-column min-vh-100">
         <AppHeader />
