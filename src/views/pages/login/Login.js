@@ -18,10 +18,17 @@ import { cilLockLocked, cilUser } from '@coreui/icons'
 
 const Login = () => {
   return (
-    <div className="bg-body-tertiary min-vh-100 d-flex flex-row align-items-center" style={{ backgroundImage:"url('src/assets/images/loginbg.jpeg')", backgroundRepeat: "repeat",}}>
-      <CContainer>
-        <CRow className="justify-content-center">
-          <CCol md={4}>
+    <ParticleComponent>
+      <div
+        className="bg-body-tertiary min-vh-100 d-flex flex-row align-items-center"
+        style={{
+          backgroundImage: "url('src/assets/images/loginbg.jpeg')",
+          backgroundRepeat: 'repeat',
+        }}
+      >
+        <CContainer>
+          <CRow className="justify-content-center">
+            <CCol md={4}>
               <CCard className="p-4">
                 <CCardBody>
                   <CForm>
@@ -49,7 +56,7 @@ const Login = () => {
                           <CButton color="primary" className="px-4">
                             Login
                           </CButton>
-                        </Link>  
+                        </Link>
                       </CCol>
                       <CCol xs={6} className="text-right">
                         <CButton color="link" className="px-0">
@@ -60,10 +67,11 @@ const Login = () => {
                   </CForm>
                 </CCardBody>
               </CCard>
-          </CCol>
-        </CRow>
-      </CContainer>
-    </div>
+            </CCol>
+          </CRow>
+        </CContainer>
+      </div>
+    </ParticleComponent>
   )
 }
 
