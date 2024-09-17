@@ -56,6 +56,10 @@ const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 
 const Registration = React.lazy(() => import('./views/Registration'))
 
+//Employees
+
+const Employees = React.lazy(() => import('./views/Reports'))
+
 //Members
 const Members = React.lazy(() => import('./views/Members'))
 
