@@ -56,9 +56,6 @@ const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 
 const Registration = React.lazy(() => import('./views/Registration'))
 
-//Employees
-
-const Employees = React.lazy(() => import('./views/Reports'))
 
 //Members
 const Members = React.lazy(() => import('./views/Members'))
@@ -80,7 +77,7 @@ const routes = [
 
   { path: '/members', name: 'Members', element: Members },
 
-  
+
   { path: '/theme', name: 'Theme', element: Colors, exact: true },
   { path: '/theme/colors', name: 'Colors', element: Colors },
   { path: '/theme/typography', name: 'Typography', element: Typography },
