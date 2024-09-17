@@ -49,6 +49,7 @@ const Registration = () => {
     const formData = new FormData()
     formData.append('Files', files)
     console.log(formData.getAll())
+
     // fetch(
     //   "link", {
     //     method: "POST",
@@ -56,6 +57,7 @@ const Registration = () => {
     //   }
     // )
 
+    
     console.log(files)
   }
 

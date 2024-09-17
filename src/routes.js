@@ -63,11 +63,16 @@ const Members = React.lazy(() => import('./views/Members'))
 
 const Reports = React.lazy(() => import('./views/Reports'))
 
+//Employees
+
+const Employees = React.lazy(() => import('./views/Employees')) 
+
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', element: Dashboard },
   { path: '/registration', name: 'Registration', element: Registration },
   { path: '/reports', name: 'Reports', element: Reports },
+  { path: '/employees', name: 'Employees', element: Employees },
 
   { path: '/members', name: 'Members', element: Members },
   { path: '/theme', name: 'Theme', element: Colors, exact: true },

@@ -20,16 +20,17 @@ import {
   CButton,
 } from '@coreui/react'
 
-const Members = () => {
+function Employees() {
   const [visible, setVisible] = useState(false)
-  const [selectedMember, setSelectedMember] = useState({})
+  const [selectedEmployee, setSelectedEmployee] = useState({})
 
-  const handleAssignCardClick = (member) => {
-    setSelectedMember(member)
+  const handleAssignCardClick = (employee) => {
+    setSelectedEmployee(employee)
     setVisible(true) // Show the modal when "Assign Card" is clicked
   }
 
-  const members = [
+
+  const employees = [
     { id: 1, firstName: 'Mark', lastName: 'Otto', mobile: '@mdo', email: 'otto@gmail.com' },
     { id: 2, firstName: 'Jacob', lastName: 'Thornton', mobile: '@fat', email: 'otto@gmail.com' },
     { id: 3, firstName: 'Larry', lastName: 'Bird', mobile: '@twitter', email: 'otto@gmail.com' },
@@ -42,7 +43,7 @@ const Members = () => {
         style={{ boxShadow: '0px 15px 34px 0px rgba(0,0,0,0.2)', color: 'blue', padding: '20px' }}
       >
         <CCardHeader style={{ backgroundColor: '#fff' }}>
-          <h3>CHURCH MEMBERS</h3>
+          <h3>CHURCH EMPLOYEES</h3>
         </CCardHeader>
         <CTable>
           <CTableHead>
@@ -56,18 +57,18 @@ const Members = () => {
             </CTableRow>
           </CTableHead>
           <CTableBody>
-            {members.map((member) => (
-              <CTableRow key={member.id}>
-                <CTableHeaderCell scope="row">{member.id}</CTableHeaderCell>
-                <CTableDataCell>{member.firstName}</CTableDataCell>
-                <CTableDataCell>{member.lastName || '-'}</CTableDataCell>
-                <CTableDataCell>{member.mobile}</CTableDataCell>
-                <CTableDataCell>{member.email}</CTableDataCell>
+            {employees.map((employee) => (
+              <CTableRow key={employee.id}>
+                <CTableHeaderCell scope="row">{employee.id}</CTableHeaderCell>
+                <CTableDataCell>{employee.firstName}</CTableDataCell>
+                <CTableDataCell>{employee.lastName || '-'}</CTableDataCell>
+                <CTableDataCell>{employee.mobile}</CTableDataCell>
+                <CTableDataCell>{employee.email}</CTableDataCell>
                 <CTableDataCell>
                   <CDropdown alignment="end">
                     <CDropdownToggle color="success" style={{color:"#fff"}}>Action</CDropdownToggle>
                     <CDropdownMenu>
-                      <CDropdownItem onClick={() => handleAssignCardClick(member)}>
+                      <CDropdownItem onClick={() => handleAssignCardClick(employee)}>
                         Assign Card
                       </CDropdownItem>
                       <CDropdownItem>Delete</CDropdownItem>
@@ -87,16 +88,16 @@ const Members = () => {
         </CModalHeader>
         <CModalBody>
           <p>
-            <strong>First Name:</strong> {selectedMember.firstName}
+            <strong>First Name:</strong> {selectedEmployee.firstName}
           </p>
           <p>
-            <strong>Surname:</strong> {selectedMember.lastName || '-'}
+            <strong>Surname:</strong> {selectedEmployee.lastName || '-'}
           </p>
           <p>
-            <strong>Mobile Number:</strong> {selectedMember.mobile}
+            <strong>Mobile Number:</strong> {selectedEmployee.mobile}
           </p>
           <p>
-            <strong>Email:</strong> {selectedMember.email}
+            <strong>Email:</strong> {selectedEmployee.email}
           </p>
         </CModalBody>
         <CModalFooter>
@@ -110,4 +111,4 @@ const Members = () => {
   )
 }
 
-export default Members
+export default Employees
