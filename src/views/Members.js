@@ -65,7 +65,7 @@ const Members = () => {
                 <CTableDataCell>{member.email}</CTableDataCell>
                 <CTableDataCell>
                   <CDropdown alignment="end">
-                    <CDropdownToggle color="success">Action</CDropdownToggle>
+                    <CDropdownToggle color="success" style={{color:"#fff"}}>Action</CDropdownToggle>
                     <CDropdownMenu>
                       <CDropdownItem onClick={() => handleAssignCardClick(member)}>
                         Assign Card
