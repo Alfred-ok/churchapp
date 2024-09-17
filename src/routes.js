@@ -75,6 +75,8 @@ const routes = [
   { path: '/employees', name: 'Employees', element: Employees },
 
   { path: '/members', name: 'Members', element: Members },
+
+  
   { path: '/theme', name: 'Theme', element: Colors, exact: true },
   { path: '/theme/colors', name: 'Colors', element: Colors },
   { path: '/theme/typography', name: 'Typography', element: Typography },
