@@ -56,26 +56,14 @@ const Employees = () => {
             </CTableRow>
           </CTableHead>
           <CTableBody>
-            {employees.map((employees) => (
-              <CTableRow key={employees.id}>
-                <CTableHeaderCell scope="row">{employees.id}</CTableHeaderCell>
-                <CTableDataCell>{employees.firstName}</CTableDataCell>
-                <CTableDataCell>{employees.lastName || '-'}</CTableDataCell>
-                <CTableDataCell>{employees.mobile}</CTableDataCell>
-                <CTableDataCell>{employees.email}</CTableDataCell>
-                <CTableDataCell>
-                  <CDropdown alignment="end">
-                    <CDropdownToggle color="success" style={{ color: '#fff', fontWeight: 'bold' }}>
-                      Action
-                    </CDropdownToggle>
-                    <CDropdownMenu>
-                      <CDropdownItem onClick={() => handleAssignCardClick(employees)}>
-                        Assign Card
-                      </CDropdownItem>
-                      <CDropdownItem>Delete</CDropdownItem>
-                    </CDropdownMenu>
-                  </CDropdown>
-                </CTableDataCell>
+            {employee.map((employee) => (
+              <CTableRow key={employee.id}>
+                <CTableHeaderCell scope="row">{employee.id}</CTableHeaderCell>
+                <CTableDataCell>{employee.firstName}</CTableDataCell>
+                <CTableDataCell>{employee.lastName || '-'}</CTableDataCell>
+                <CTableDataCell>{employee.mobile}</CTableDataCell>
+                <CTableDataCell>{employee.email}</CTableDataCell>
+                <CTableDataCell>hgdhfhfh</CTableDataCell>
               </CTableRow>
             ))}
           </CTableBody>
