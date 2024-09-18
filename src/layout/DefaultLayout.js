@@ -3,11 +3,18 @@ import { AppContent, AppSidebar, AppFooter, AppHeader } from '../components/inde
 
 const DefaultLayout = () => {
   return (
-    <div style={{ backgroundImage:"url('src/assets/images/Geometric-2.jpg')", backgroundRepeat: "repeat", position:"relative", color:"black"}}>
+    <div
+      style={{
+        backgroundImage: "url('src/assets/images/Geometric-2.jpg')",
+        backgroundRepeat: 'repeat',
+        position: 'relative',
+        color: 'black',
+      }}
+    >
       <AppSidebar />
       <div className="wrapper d-flex flex-column min-vh-100">
         <AppHeader />
-        <div className="body flex-grow-1" style={{zIndex:6}}>
+        <div className="body flex-grow-1" style={{ zIndex: 6 }}>
           <AppContent />
         </div>
         <AppFooter />
