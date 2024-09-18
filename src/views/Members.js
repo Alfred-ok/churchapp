@@ -20,11 +20,11 @@ import {
   CInputGroup,
   CInputGroupText,
   CFormInput,
-  CTabs,
+  CNav,
+  CNavItem,
+  CNavLink,
   CTabContent,
   CTabPane,
-  CTab,
-  CTabList,
 } from '@coreui/react'
 import { FiSearch } from 'react-icons/fi'
 
@@ -63,7 +63,52 @@ const Members = () => {
       lastName: 'Bird',
       mobile: '@twitter',
       email: 'otto@gmail.com',
+      receiving: true,
+    },
+
+    {
+      id: 4,
+      firstName: 'Robbie',
+      lastName: 'Right',
+      mobile: '01150010978',
+      email: 'robbie@gmail.com',
       receiving: false,
+    },
+
+    {
+      id: 5,
+      firstName: 'Ashley',
+      lastName: 'Williams',
+      mobile: '737872387918',
+      email: 'ashley@gmail.com',
+      receiving: false,
+    },
+
+    {
+      id: 6,
+      firstName: 'Ramsey',
+      lastName: 'Bolton',
+      mobile: '34567890897654',
+      email: 'ramsey@gmail.com',
+      receiving: true,
+    },
+
+    {
+      id: 7,
+      firstName: 'Leannah',
+      lastName: 'Smith',
+      mobile: '7881479894891',
+      email: 'leannah@gmail.com',
+      receiving: false,
+    },
+
+    {
+      id: 8,
+      firstName: 'Rosie',
+      lastName: 'Fox',
+      mobile: '7634676893',
+      email: 'robbie@gmail.com',
+      receiving: true,
     },
   ]
 
@@ -89,47 +134,65 @@ const Members = () => {
         }}
       >
         {/* Tabs for All, Receiving, and Non-Receiving Members */}
-        <CTabs activeKey={activeTab} onActiveKeyChange={setActiveTab}>
-          <CTabList
-            variant="pills"
-            className="d-flex justify-content-center"
-            style={{ marginBottom: '10px' }} // Raise tabs above the bottom border
-          >
-            <CTab
-              itemKey={1}
-              style={{ margin: '0 5px', borderRadius: '100px', fontWeight: 'bold' }} // Space between tabs
+        <CNav variant="pills" className="d-flex justify-content-center" role="tablist">
+          <CNavItem>
+            <CNavLink
+              active={activeTab === 1}
+              onClick={() => setActiveTab(1)}
+              style={{
+                margin: '0 5px',
+                borderRadius: '100px',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+              }}
             >
               All Members
-            </CTab>
-            <CTab
-              itemKey={2}
-              style={{ margin: '0 5px', borderRadius: '100px', fontWeight: 'bold' }} // Space between tabs
+            </CNavLink>
+          </CNavItem>
+          <CNavItem>
+            <CNavLink
+              active={activeTab === 2}
+              onClick={() => setActiveTab(2)}
+              style={{
+                margin: '0 5px',
+                borderRadius: '100px',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+              }}
             >
               Receiving Members
-            </CTab>
-            <CTab
-              itemKey={3}
-              style={{ margin: '0 5px', borderRadius: '100px', fontWeight: 'bold' }} // Space between tabs
+            </CNavLink>
+          </CNavItem>
+          <CNavItem>
+            <CNavLink
+              active={activeTab === 3}
+              onClick={() => setActiveTab(3)}
+              style={{
+                margin: '0 5px',
+                borderRadius: '100px',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+              }}
             >
               Non-Receiving Members
-            </CTab>
-          </CTabList>
+            </CNavLink>
+          </CNavItem>
+        </CNav>
 
-          <CTabContent>
-            <CTabPane itemKey={1}>
-              {/* Tab for All Members */}
-              <h4>All Members</h4>
-            </CTabPane>
-            <CTabPane itemKey={2}>
-              {/* Tab for Receiving Members */}
-              <h4>Receiving Members</h4>
-            </CTabPane>
-            <CTabPane itemKey={3}>
-              {/* Tab for Non-Receiving Members */}
-              <h4>Non-Receiving Members</h4>
-            </CTabPane>
-          </CTabContent>
-        </CTabs>
+        <CTabContent>
+          <CTabPane visible={activeTab === 1}>
+            {/* Tab for All Members */}
+            <h4 style={{ color: 'blue' }}>All Members</h4>
+          </CTabPane>
+          <CTabPane visible={activeTab === 2}>
+            {/* Tab for Receiving Members */}
+            <h4 style={{ color: 'blue' }}>Receiving Members</h4>
+          </CTabPane>
+          <CTabPane visible={activeTab === 3}>
+            {/* Tab for Non-Receiving Members */}
+            <h4 style={{ color: 'blue' }}>Non-Receiving Members</h4>
+          </CTabPane>
+        </CTabContent>
 
         {/* Search Inputs with Icons */}
         <CInputGroup className="mb-3">

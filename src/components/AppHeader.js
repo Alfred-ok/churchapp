@@ -43,7 +43,12 @@ const AppHeader = () => {
   }, [])
 
   return (
-    <CHeader position="sticky" className="mb-4 p-0" ref={headerRef} style={{ borderBottom:"1px solid rgb(207, 206, 206)"}}>
+    <CHeader
+      position="sticky"
+      className="mb-4 p-0"
+      ref={headerRef}
+      style={{ borderBottom: '1px solid rgb(207, 206, 206)' }}
+    >
       <CContainer
         className="border-bottom px-4"
         fluid
@@ -52,8 +57,8 @@ const AppHeader = () => {
           alignItems: 'center',
           justifyContent: 'flex-start',
           height: '82px',
-         // boxShadow:"3px 6px 5px 2px lightgray"
-          boxShadow: "0px 10px 8px 0px rgba(0,0,0,0.1)"
+          // boxShadow:"3px 6px 5px 2px lightgray"
+          boxShadow: '0px 10px 8px 0px rgba(0,0,0,0.1)',
         }}
       >
         <CHeaderToggler

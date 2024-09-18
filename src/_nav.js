@@ -44,7 +44,6 @@ const _nav = [
     name: 'Registration',
     to: '/registration',
     icon: <MdAccountCircle className="nav-icon" />,
-    marginBottom: '10px',
   },
 
   {
@@ -52,7 +51,6 @@ const _nav = [
     name: 'Members',
     to: '/members',
     icon: <MdCoPresent className="nav-icon" />,
-    marginBottom: '10px',
   },
 
   {
@@ -60,7 +58,6 @@ const _nav = [
     name: 'Employees',
     to: '/employees',
     icon: <CIcon icon={cilGroup} customClassName="nav-icon" />,
-    marginBottom: '10px',
   },
 
   {
@@ -69,7 +66,6 @@ const _nav = [
     to: '/reports',
     icon: <MdCorporateFare className="nav-icon" />,
     color: 'white',
-    marginBottom: '10px',
   },
 
   /*
