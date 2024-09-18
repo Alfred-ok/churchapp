@@ -15,6 +15,9 @@ import {
   cilUserPlus,
   cilGroup,
 } from '@coreui/icons'
+
+import { MdAccountCircle, MdCoPresent, MdCorporateFare } from 'react-icons/md'
+
 import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 
 const _nav = [
@@ -40,14 +43,14 @@ const _nav = [
     component: CNavItem,
     name: 'Registration',
     to: '/registration',
-    icon: <CIcon icon={cilUserPlus} customClassName="nav-icon" />,
+    icon: <MdAccountCircle className="nav-icon" />,
   },
 
   {
     component: CNavItem,
     name: 'Members',
     to: '/members',
-    icon: <CIcon icon={cilGroup} customClassName="nav-icon" />,
+    icon: <MdCoPresent className="nav-icon" />,
   },
 
   {
@@ -61,7 +64,7 @@ const _nav = [
     component: CNavItem,
     name: 'Reports',
     to: '/reports',
-    icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
+    icon: <MdCorporateFare className="nav-icon" />,
   },
 
   /*
