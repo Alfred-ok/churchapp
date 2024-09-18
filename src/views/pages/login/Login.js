@@ -23,7 +23,10 @@ const Login = () => {
       <div
         className=" min-vh-100 d-flex flex-row align-items-center"
         style={{
-         backgroundColor:"rgb(71, 71, 212)"
+         backgroundColor:"rgb(71, 71, 212)",
+         backgroundImage: "url('src/assets/images/Geometric-2.jpg')",
+         backgroundRepeat: 'repeat',
+         backgroundBlendMode: 'multiply'
         }}
       >
         <CContainer>
