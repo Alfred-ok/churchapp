@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   CTable,
   CTableBody,
@@ -5,36 +6,49 @@ import {
   CTableHead,
   CTableHeaderCell,
   CTableRow,
+  CButton,
 } from '@coreui/react'
 
 const Reports = () => {
+  const members = [
+    { id: 1, firstName: 'Mark', lastName: 'Otto', time: '09:00 AM', status: 'Present' },
+    { id: 2, firstName: 'Jacob', lastName: 'Thornton', time: '09:15 AM', status: 'Absent' },
+    { id: 3, firstName: 'Larry', lastName: 'Bird', time: '09:10 AM', status: 'Present' },
+  ]
+
+  const handlePrint = () => {
+    window.print()
+  }
+
   return (
     <CTable>
       <CTableHead>
         <CTableRow>
           <CTableHeaderCell scope="col">#</CTableHeaderCell>
-          <CTableHeaderCell scope="col">Class</CTableHeaderCell>
-          <CTableHeaderCell scope="col">Heading</CTableHeaderCell>
-          <CTableHeaderCell scope="col">Heading</CTableHeaderCell>
+          <CTableHeaderCell scope="col">First Name</CTableHeaderCell>
+          <CTableHeaderCell scope="col">Last Name</CTableHeaderCell>
+          <CTableHeaderCell scope="col">Time</CTableHeaderCell>
+          <CTableHeaderCell scope="col">Status</CTableHeaderCell>
         </CTableRow>
       </CTableHead>
       <CTableBody>
+        {members.map((member) => (
+          <CTableRow key={member.id}>
+            <CTableHeaderCell scope="row">{member.id}</CTableHeaderCell>
+            <CTableDataCell>{member.firstName}</CTableDataCell>
+            <CTableDataCell>{member.lastName}</CTableDataCell>
+            <CTableDataCell>{member.time}</CTableDataCell>
+            <CTableDataCell>{member.status}</CTableDataCell>
+          </CTableRow>
+        ))}
+
+        {/* New row for the print button */}
         <CTableRow>
-          <CTableHeaderCell scope="row">1</CTableHeaderCell>
-          <CTableDataCell>Mark</CTableDataCell>
-          <CTableDataCell>Otto</CTableDataCell>
-          <CTableDataCell>@mdo</CTableDataCell>
-        </CTableRow>
-        <CTableRow>
-          <CTableHeaderCell scope="row">2</CTableHeaderCell>
-          <CTableDataCell>Jacob</CTableDataCell>
-          <CTableDataCell>Thornton</CTableDataCell>
-          <CTableDataCell>@fat</CTableDataCell>
-        </CTableRow>
-        <CTableRow>
-          <CTableHeaderCell scope="row">3</CTableHeaderCell>
-          <CTableDataCell colSpan={2}>Larry the Bird</CTableDataCell>
-          <CTableDataCell>@twitter</CTableDataCell>
+          <CTableDataCell colSpan="5" className="text-center">
+            {/* <CButton color="primary" onClick={handlePrint}>
+              Print Report
+            </CButton> */}
+          </CTableDataCell>
         </CTableRow>
       </CTableBody>
     </CTable>

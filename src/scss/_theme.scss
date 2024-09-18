@@ -30,6 +30,11 @@ body {
     align-items: center;
     min-height: calc(4rem + 1px); // stylelint-disable-line function-disallowed-list
   }
+ 
+}
+
+.nav-link:hover{
+  background-color: blueviolet;
 }
 
 .sidebar-toggler {

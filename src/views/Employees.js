@@ -29,7 +29,6 @@ function Employees() {
     setVisible(true) // Show the modal when "Assign Card" is clicked
   }
 
-
   const employees = [
     { id: 1, firstName: 'Mark', lastName: 'Otto', mobile: '@mdo', email: 'otto@gmail.com' },
     { id: 2, firstName: 'Jacob', lastName: 'Thornton', mobile: '@fat', email: 'otto@gmail.com' },
@@ -53,6 +52,7 @@ function Employees() {
               <CTableHeaderCell scope="col">Surname</CTableHeaderCell>
               <CTableHeaderCell scope="col">Mobile Number</CTableHeaderCell>
               <CTableHeaderCell scope="col">Email</CTableHeaderCell>
+              <CTableHeaderCell scope="col"></CTableHeaderCell>
               <CTableHeaderCell scope="col">Action</CTableHeaderCell>
             </CTableRow>
           </CTableHead>
@@ -66,7 +66,9 @@ function Employees() {
                 <CTableDataCell>{employee.email}</CTableDataCell>
                 <CTableDataCell>
                   <CDropdown alignment="end">
-                    <CDropdownToggle color="success" style={{color:"#fff"}}>Action</CDropdownToggle>
+                    <CDropdownToggle color="success" style={{ color: '#fff' }}>
+                      Action
+                    </CDropdownToggle>
                     <CDropdownMenu>
                       <CDropdownItem onClick={() => handleAssignCardClick(employee)}>
                         Assign Card

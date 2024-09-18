@@ -20,7 +20,6 @@ import { CImage } from '@coreui/react'
 
 // sidebar nav config
 import navigation from '../_nav'
-import { bottom, end } from '@popperjs/core'
 
 const AppSidebar = () => {
   const dispatch = useDispatch()
@@ -30,17 +29,21 @@ const AppSidebar = () => {
   return (
     <CSidebar
       className="border-end"
-      colorScheme="light"
+      colorScheme="dark"
       position="fixed"
       unfoldable={unfoldable}
       visible={sidebarShow}
       onVisibleChange={(visible) => {
         dispatch({ type: 'set', sidebarShow: visible })
       }}
-      style={{ backgroundColor: 'f5f5f5', color:'black', boxShadow: "20px 0px 60px -5px rgba(0,0,0,0.2)", zIndex:3}}
-      
+      style={{
+        backgroundColor: 'rgba(22, 89, 177, 0.925)', // Maroon color
+        color: 'white',
+        boxShadow: '20px 0px 60px -5px rgba(0,0,0,0.2)',
+        zIndex: 3,
+      }}
     >
-      <CSidebarHeader className="border-bottom" style={{borderRight:"1px solid rgb(207, 206, 206)"}}>
+      <CSidebarHeader className="border-bottom">
         <div style={{ display: 'flex', alignItems: 'end', justifyContent: 'center' }}>
           <CImage rounded src={logo1} width={50} height={50} />
           <h4>PCEA</h4>
@@ -53,11 +56,11 @@ const AppSidebar = () => {
       </CSidebarHeader>
 
       {
-        //nav list
+        // nav list
       }
       <AppSidebarNav items={navigation} />
 
-      <CSidebarFooter className="border-top d-none d-lg-flex" style={{borderRight:"1px solid rgb(207, 206, 206)"}}>
+      <CSidebarFooter className="border-top d-none d-lg-flex">
         <CSidebarToggler
           onClick={() => dispatch({ type: 'set', sidebarUnfoldable: !unfoldable })}
         />

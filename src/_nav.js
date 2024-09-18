@@ -45,15 +45,15 @@ const _nav = [
 
   {
     component: CNavItem,
-    name: 'Employees',
-    to: '/employees',
+    name: 'Members',
+    to: '/members',
     icon: <CIcon icon={cilGroup} customClassName="nav-icon" />,
   },
 
   {
     component: CNavItem,
-    name: 'Members',
-    to: '/members',
+    name: 'Employees',
+    to: '/employees',
     icon: <CIcon icon={cilGroup} customClassName="nav-icon" />,
   },
 

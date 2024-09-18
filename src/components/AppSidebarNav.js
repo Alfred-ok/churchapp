@@ -7,11 +7,9 @@ import 'simplebar-react/dist/simplebar.min.css'
 import '../scss/nav1.css'
 
 import { CBadge, CNavLink, CSidebarNav } from '@coreui/react'
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const AppSidebarNav = ({ items }) => {
-
-
   const navLink = (name, icon, badge, indent = false) => {
     return (
       <>
@@ -24,7 +22,7 @@ export const AppSidebarNav = ({ items }) => {
             )}
         {name && name}
         {badge && (
-          <CBadge color={badge.color} className="ms-auto" >
+          <CBadge color={badge.color} className="ms-auto">
             {badge.text}
           </CBadge>
         )}
@@ -36,20 +34,15 @@ export const AppSidebarNav = ({ items }) => {
     const { component, name, badge, icon, ...rest } = item
     const Component = component
     return (
-      
       <Component as="div" key={index} color="success">
-
         {rest.to || rest.href ? (
-          
-          <CNavLink  {...(rest.to && { as: NavLink })} {...rest} >
+          <CNavLink {...(rest.to && { as: NavLink })} {...rest}>
             {navLink(name, icon, badge, indent)}
           </CNavLink>
-          
         ) : (
           navLink(name, icon, badge, indent)
         )}
       </Component>
-      
     )
   }
 
@@ -66,7 +59,7 @@ export const AppSidebarNav = ({ items }) => {
   }
 
   return (
-    <CSidebarNav as={SimpleBar} style={{borderRight:"1px solid rgb(207, 206, 206)"}}>
+    <CSidebarNav as={SimpleBar}>
       {items &&
         items.map((item, index) => (item.items ? navGroup(item, index) : navItem(item, index)))}
     </CSidebarNav>
